@@ -10,4 +10,4 @@ dependencies = [
 ]
 
 [project.scripts]
-run-server = "brent_bin_day_agent:main"
+run-server = "main:main"
