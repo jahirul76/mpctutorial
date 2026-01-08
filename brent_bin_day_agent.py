@@ -8,8 +8,7 @@ mcp = FastMCP("Brent Bin Day Agent")
 
 
 @mcp.tool(title="Find Council by Postcode", 
-          description="Finds the council for a given postcode", 
-          tags=["postcode", "council"])
+          description="Finds the council for a given postcode")
 def find_council(postcode: str) -> str:
     url = f"https://api.postcodes.io/postcodes/{postcode}"
     response = httpx.get(url)
@@ -21,8 +20,7 @@ def find_council(postcode: str) -> str:
     
 
 @mcp.tool(title="Bin Collection Day Tool", 
-          description="Fetches bin collection day for a given council", 
-          tags=["bin", "collection", "council"])
+          description="Fetches bin collection day for a given council")
 def get_bin_collection_day(council: str) -> str:
 
     if council.lower() != "brent":
