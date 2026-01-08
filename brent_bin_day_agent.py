@@ -31,6 +31,9 @@ def get_bin_collection_day(council: str) -> str:
 
     return data
 
+def main():
+    # Initialise and run the server
+    mcp.run(transport="stdio")
 
 if __name__ == "__main__":
-    mcp.run(transport="http", port=8000)
+    main()

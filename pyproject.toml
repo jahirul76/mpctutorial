@@ -8,3 +8,6 @@ dependencies = [
     "fastmcp>=2.14.2",
     "httpx>=0.28.1",
 ]
+
+[project.scripts]
+run-server = "brent_bin_day_agent:main"
