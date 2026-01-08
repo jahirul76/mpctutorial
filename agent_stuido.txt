@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "x-social-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/R0bD/x-social-mcp-server",
+        "run-server"
+      ],
+      "env": {
+        "bearer_token": "placeholder"
+      }
+    }
+  }
+}
