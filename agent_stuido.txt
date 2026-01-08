@@ -4,7 +4,7 @@
       "command": "uvx",
       "args": [
         "--from",
-        "git+https://github.com/jahirul76/mpctutorial",
+        "git+https://github.com/jahirul76/mpctutorial.git",
         "run-server"
       ],
       "env": {        
