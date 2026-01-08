@@ -7,7 +7,7 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("Brent Bin Day Agent")
 
 
-@mcp.tool(title="Find Council by Postcode", 
+@mcp.tool(name="find_council",
           description="Finds the council for a given postcode")
 def find_council(postcode: str) -> str:
     url = f"https://api.postcodes.io/postcodes/{postcode}"
@@ -19,7 +19,7 @@ def find_council(postcode: str) -> str:
         return "Unknown Council"
     
 
-@mcp.tool(title="Bin Collection Day Tool", 
+@mcp.tool(name="get_bin_collection_day", 
           description="Fetches bin collection day for a given council")
 def get_bin_collection_day(council: str) -> str:
 
