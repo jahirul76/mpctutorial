@@ -1,14 +1,13 @@
 {
   "mcpServers": {
-    "x-social-mcp-server": {
+    "bin-day-agent-mcp": {
       "command": "uvx",
       "args": [
         "--from",
-        "git+https://github.com/R0bD/x-social-mcp-server",
+        "git+https://github.com/jahirul76/mpctutorial",
         "run-server"
       ],
-      "env": {
-        "bearer_token": "placeholder"
+      "env": {        
       }
     }
   }
