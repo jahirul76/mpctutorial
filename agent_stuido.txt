@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "bin-day-agent-mcp": {
+    "bin-day-mcp": {
       "command": "uvx",
       "args": [
         "--from",
