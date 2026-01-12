@@ -1,5 +1,4 @@
 import asyncio
-from unittest import result
 from fastmcp import Client
 
 
