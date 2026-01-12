@@ -1,4 +1,5 @@
 
+import os
 import httpx
 # from fastmcp import FastMCP
 from fastmcp import FastMCP
@@ -26,7 +27,8 @@ def get_bin_collection_day(council: str) -> str:
     if council.lower() != "brent":
         return "This tool only supports Brent council."
 
-    with open('brent_collection_text.txt', 'r') as file:
+    file_path = os.path.join(os.path.dirname(__file__), "brent_collection_text.txt")
+    with open(file_path, 'r', encoding="utf-8") as file:
         data = file.read().rstrip()
 
     return data
