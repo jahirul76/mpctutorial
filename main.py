@@ -1,7 +1,7 @@
 
 import os
 import httpx
-# from fastmcp import FastMCP
+import logging
 from fastmcp import FastMCP
 
 
@@ -28,9 +28,14 @@ def get_bin_collection_day(council: str) -> str:
         return "This tool only supports Brent council."
 
     file_path = os.path.join(os.path.dirname(__file__), "brent_collection_text.txt")
-    with open(file_path, 'r', encoding="utf-8") as file:
-        data = file.read().rstrip()
-
+    try:
+        with open(file_path, 'r', encoding="utf-8") as file:
+            data = file.read().rstrip()
+    except FileNotFoundError:
+        logging.warning("brent_collection_text.txt not found at %s", file_path)
+    except Exception:
+        logging.exception("failed to load 'brent_collection_text.txt' from %s", file_path)
+    
     return data
 
 def main():
