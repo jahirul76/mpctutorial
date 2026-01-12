@@ -1,7 +1,7 @@
 
 import httpx
 # from fastmcp import FastMCP
-from mcp.server.fastmcp import FastMCP
+from fastmcp import FastMCP
 
 
 mcp = FastMCP("bindayagent")
