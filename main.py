@@ -4,7 +4,7 @@ import httpx
 from mcp.server.fastmcp import FastMCP
 
 
-mcp = FastMCP("Brent Bin Day Agent")
+mcp = FastMCP("bindayagent")
 
 
 @mcp.tool(name="find_council",
