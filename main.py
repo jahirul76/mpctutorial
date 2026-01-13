@@ -27,9 +27,9 @@ def get_bin_collection_day(council: str) -> str:
     if council.lower() != "brent":
         return "This tool only supports Brent council."
 
-    file_path = os.path.join(os.path.dirname(__file__), "brent_collection_text.txt")
+    file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "brent_collection_text.txt")
     try:
-        with open(file_path, 'r', encoding="utf-8") as file:
+        with open(file_path, "r", encoding="utf-8") as file:
             data = file.read().rstrip()
     except FileNotFoundError:
         logging.warning("brent_collection_text.txt not found at %s", file_path)
@@ -38,9 +38,16 @@ def get_bin_collection_day(council: str) -> str:
     
     return data
 
+
 def main():
     # Initialise and run the server
     mcp.run(transport="stdio")
+
+    # `get_bin_collection_day` is wrapped by the `@mcp.tool` decorator
+    # which returns a FunctionTool object. Call the underlying
+    # function via the `.fn` attribute to invoke it directly.
+    # data = get_bin_collection_day.fn("Brent")
+    # print(data)
 
 if __name__ == "__main__":
     main()
