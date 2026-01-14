@@ -29,15 +29,16 @@ def get_bin_collection_day(council: str) -> str:
 
     file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "brent_collection_text.txt")
     try:
-        with open(file_path, "r", encoding="utf-8") as file:
+        with open(file_path, "r") as file:
             data = file.read().rstrip()
     except FileNotFoundError:
         logging.warning("brent_collection_text.txt not found at %s", file_path)
+        data = file_path
     except Exception:
         logging.exception("failed to load 'brent_collection_text.txt' from %s", file_path)
-    
+        data = file_path
+        
     return data
-
 
 def main():
     # Initialise and run the server
